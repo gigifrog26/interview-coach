@@ -1,0 +1,100 @@
+# Question Templates Configuration
+# This file contains fallback question templates for different topics
+# Used when LLM providers are unavailable or fail to generate questions
+
+question_templates:
+  Python:
+    - "Explain the difference between lists and tuples in Python."
+    - "How does Python handle memory management?"
+    - "What are decorators and how do you use them?"
+    - "Explain the Global Interpreter Lock (GIL) in Python."
+    - "How do you implement a singleton pattern in Python?"
+    - "What are context managers and how do you use them?"
+    - "Explain list comprehensions and when to use them."
+    - "How does Python's garbage collection work?"
+    - "What are metaclasses and when would you use them?"
+    - "Explain the difference between __init__ and __new__ methods."
+
+  JavaScript:
+    - "Explain closures in JavaScript."
+    - "How does the event loop work?"
+    - "What are the differences between var, let, and const?"
+    - "Explain prototypal inheritance in JavaScript."
+    - "How do you handle asynchronous operations?"
+    - "What are promises and how do you use them?"
+    - "Explain the 'this' keyword and its binding."
+    - "How do you implement module patterns?"
+    - "What are arrow functions and their limitations?"
+    - "Explain hoisting in JavaScript."
+
+  System Design:
+    - "Design a URL shortening service."
+    - "How would you design a chat application?"
+    - "Design a recommendation system."
+    - "Design a distributed cache system."
+    - "How would you design a social media feed?"
+    - "Design a payment processing system."
+    - "Design a content delivery network (CDN)."
+    - "How would you design a real-time analytics system?"
+    - "Design a microservices architecture."
+    - "Design a database sharding strategy."
+
+  Data Structures:
+    - "Explain the time complexity of common operations on arrays, linked lists, and hash tables."
+    - "How would you implement a stack using an array?"
+    - "Design an efficient data structure for a priority queue."
+    - "Explain the difference between B-trees and binary search trees."
+    - "How would you implement a circular buffer?"
+    - "Design a data structure for efficient range queries."
+    - "Explain the concept of amortized analysis."
+    - "How would you implement a bloom filter?"
+    - "Design a data structure for representing graphs."
+    - "Explain the trade-offs between different tree balancing strategies."
+
+  Algorithms:
+    - "Explain the difference between depth-first and breadth-first search."
+    - "How would you optimize a sorting algorithm for specific use cases?"
+    - "Design an algorithm for finding the shortest path in a weighted graph."
+    - "Explain dynamic programming with examples."
+    - "How would you implement a binary search algorithm?"
+    - "Design an algorithm for detecting cycles in a graph."
+    - "Explain the concept of time-space trade-offs."
+    - "How would you implement a string matching algorithm?"
+    - "Design an algorithm for finding the median of two sorted arrays."
+    - "Explain the concept of greedy algorithms with examples."
+
+  Database:
+    - "Explain the differences between SQL and NoSQL databases."
+    - "How would you design a database schema for an e-commerce system?"
+    - "Explain ACID properties and their importance."
+    - "How would you optimize slow database queries?"
+    - "Design a database replication strategy."
+    - "Explain the concept of database normalization."
+    - "How would you implement database sharding?"
+    - "Design a backup and recovery strategy."
+    - "Explain the differences between various database indexing strategies."
+    - "How would you handle database connection pooling?"
+
+  Networking:
+    - "Explain the OSI model and its layers."
+    - "How does TCP ensure reliable data transmission?"
+    - "Explain the difference between TCP and UDP."
+    - "How does DNS resolution work?"
+    - "Design a load balancing strategy for web servers."
+    - "Explain the concept of network security and common threats."
+    - "How would you implement rate limiting in an API?"
+    - "Design a CDN architecture for global content delivery."
+    - "Explain the concept of network virtualization."
+    - "How would you troubleshoot network connectivity issues?"
+
+  Machine Learning:
+    - "Explain the difference between supervised and unsupervised learning."
+    - "How would you handle overfitting in a machine learning model?"
+    - "Explain the concept of cross-validation."
+    - "How would you preprocess data for machine learning?"
+    - "Design a recommendation system using collaborative filtering."
+    - "Explain the concept of feature engineering."
+    - "How would you evaluate the performance of a classification model?"
+    - "Design a natural language processing pipeline."
+    - "Explain the concept of ensemble methods."
+    - "How would you implement a simple neural network?"

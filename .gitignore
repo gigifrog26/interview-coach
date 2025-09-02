@@ -290,7 +290,6 @@ coverage.xml
 .ipynb_checkpoints/
 
 # Model files (if any)
-models/
 *.model
 *.pkl
 *.joblib
@@ -365,7 +364,6 @@ docker-compose.yml
 docker-compose.override.yml
 
 # Kubernetes
-*.yaml
 *.yml
 !config.yaml
 !docker-compose.yml

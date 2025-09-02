@@ -1,0 +1,45 @@
+# LLM Provider Configuration Example
+# Copy this file to config/providers.yaml and fill in your actual API keys
+
+providers:
+  deepseek:
+    name: "DeepSeek"
+    enabled: true
+    api_key: "${DEEPSEEK_API_KEY}"  # Set this environment variable
+    base_url: "https://api.deepseek.com/v1"
+    model: "deepseek-chat"
+    timeout: 100
+    max_tokens: 1000
+    temperature: 0.7
+    retries: 3
+    rate_limit: 100
+  
+  qwen:
+    name: "Qwen"
+    enabled: true
+    api_key: "${QWEN_API_KEY}"  # Set this environment variable
+    base_url: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    model: "qwen-plus"
+    timeout: 30
+    max_tokens: 1000
+    temperature: 0.7
+    retries: 3
+    rate_limit: 100
+
+
+# Provider Selection Strategy
+routing:
+  strategy: "performance_based"  # Options: performance_based, round_robin, priority
+  fallback_order: ["deepseek", "qwen"]
+  
+# Circuit Breaker Settings
+circuit_breaker:
+  failure_threshold: 5
+  timeout: 60  # seconds
+  half_open_timeout: 30  # seconds
+
+# Performance Monitoring
+monitoring:
+  enabled: true
+  metrics_retention: 100  # number of requests to keep for performance calculation
+  health_check_interval: 300  # seconds between health checks
