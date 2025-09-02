@@ -1,0 +1,68 @@
+# LLM Provider Configuration Example
+# Copy this file to config/providers.yaml and fill in your actual API keys
+
+providers:
+  openai:
+    name: "OpenAI"
+    enabled: true
+    api_key: "${OPENAI_API_KEY}"  # Set this environment variable
+    base_url: "https://api.openai.com/v1"  # Optional: for custom endpoints
+    model: "gpt-4"
+    timeout: 30
+    max_tokens: 1000
+    temperature: 0.7
+    retries: 3
+    rate_limit: 100  # requests per minute
+
+  deepseek:
+    name: "DeepSeek"
+    enabled: true
+    api_key: "${DEEPSEEK_API_KEY}"  # Set this environment variable
+    base_url: "https://api.deepseek.com/v1"
+    model: "deepseek-chat"
+    timeout: 30
+    max_tokens: 1000
+    temperature: 0.7
+    retries: 3
+    rate_limit: 100
+
+  anthropic:
+    name: "Anthropic"
+    enabled: true
+    api_key: "${ANTHROPIC_API_KEY}"  # Set this environment variable
+    base_url: "https://api.anthropic.com/v1"
+    model: "claude-3-sonnet-20240229"
+    timeout: 30
+    max_tokens: 1000
+    temperature: 0.7
+    retries: 3
+    rate_limit: 100
+
+  qwen:
+    name: "Qwen"
+    enabled: true
+    api_key: "${QWEN_API_KEY}"  # Set this environment variable
+    base_url: "https://dashscope.aliyuncs.com/api/v1"
+    model: "qwen-turbo"
+    timeout: 30
+    max_tokens: 1000
+    temperature: 0.7
+    retries: 3
+    rate_limit: 100
+
+# Provider Selection Strategy
+routing:
+  strategy: "performance_based"  # Options: performance_based, round_robin, priority
+  fallback_order: ["openai", "deepseek", "anthropic", "qwen"]
+  
+# Circuit Breaker Settings
+circuit_breaker:
+  failure_threshold: 5
+  timeout: 60  # seconds
+  half_open_timeout: 30  # seconds
+
+# Performance Monitoring
+monitoring:
+  enabled: true
+  metrics_retention: 100  # number of requests to keep for performance calculation
+  health_check_interval: 300  # seconds between health checks
