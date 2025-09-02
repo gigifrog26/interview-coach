@@ -112,16 +112,6 @@ The system supports multiple LLM providers with automatic failover and load bala
    poetry run interview-coach resume-interview --session-id sess_abc123
    ```
 
-3. **List all sessions**
-   ```bash
-   poetry run interview-coach list-sessions
-   ```
-
-4. **Check system status**
-   ```bash
-   poetry run interview-coach status
-   ```
-
 ## 📁 Project Structure
 
 ```
@@ -142,11 +132,22 @@ interview_coach/
 │   ├── interview.py           # Interview session models
 │   ├── resume.py              # Resume data models
 │   └── job.py                 # Job description models
+├── providers/                  # LLM provider implementations
+│   ├── __init__.py
+│   ├── deepseek_provider.py   # DeepSeek API provider
+│   └── qwen_provider.py       # Qwen API provider
 ├── services/                   # Core services
 │   ├── __init__.py
 │   ├── llm_manager.py         # LLM provider management
 │   ├── storage_manager.py     # Data persistence
-│   └── configuration_manager.py # Configuration management
+│   ├── configuration_manager.py # Configuration management
+│   └── parsing_service.py     # File parsing service
+├── parsers/                    # File parsing modules
+│   ├── __init__.py
+│   ├── base_parser.py         # Base parser interface
+│   ├── resume_parser.py       # Resume parsing logic
+│   ├── job_parser.py          # Job description parsing
+│   └── file_handlers.py       # File format handlers
 └── utils/                      # Utilities
     ├── __init__.py
     ├── exceptions.py           # Custom exceptions
